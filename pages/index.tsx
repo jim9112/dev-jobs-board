@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import JobsContainer from '../components/JobsContainer';
+import jobData from '../lib/data.json';
 
 export default function Home() {
   return (
@@ -11,6 +13,7 @@ export default function Home() {
 
       <main>
         <h1>Dev Jobs Board</h1>
+        <JobsContainer jobs={jobData} />
       </main>
 
       <footer></footer>
