@@ -1,7 +1,7 @@
 const MasterHeader = () => {
   return (
     <div>
-      <h1>Header</h1>
+      <h1 className="font-main">Header</h1>
     </div>
   );
 };
