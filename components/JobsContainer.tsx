@@ -23,7 +23,11 @@ const JobsContainer = ({ jobs }: CompProps) => {
         {jobs.length > 0 &&
           jobs.map((job: JobType) => <JobListing key={job.id} job={job} />)}
       </div>
-      <button>Load More</button>
+      <div className="w-full grid justify-center">
+        <button className="bg-primary-violet hover:bg-primary-light-violet text-secondary-white w-36 h-12 font-main font-bold rounded-md">
+          Load More
+        </button>
+      </div>
     </div>
   );
 };
