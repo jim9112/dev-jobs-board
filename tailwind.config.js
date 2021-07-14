@@ -5,7 +5,12 @@ module.exports = {
     colors: {
       'primary-violet': '#5964E0',
       'primary-light-violet': '#939BF4',
+      'primary-very-dark-blue': '#19202D',
+      'primary-midnight': '#121721',
       'secondary-white': '#FFFFFF',
+      'secondary-light-grey': '#F4F6F8',
+      'secondary-grey': '#9DAEC2',
+      'secondary-dark-grey': '#6E8098',
     },
     fontFamily: {
       main: ['Kumbh Sans', 'sans-serif'],

@@ -15,7 +15,7 @@ type CompProps = {
 const JobListing = ({ job }: CompProps) => {
   return (
     <div className="pt-6">
-      <div className="bg-white relative p-8">
+      <div className="bg-secondary-white relative p-8 rounded-md">
         <div
           style={{ backgroundColor: job.logoBackground }}
           className="w-12 h-12 rounded-2xl absolute -top-6">
@@ -28,12 +28,14 @@ const JobListing = ({ job }: CompProps) => {
             />
           </div>
         </div>
-        <p>
-          {job.postedAt} {job.contract}
+        <p className="text-secondary-dark-grey text-base">
+          {job.postedAt} {`• ${job.contract}`}
         </p>
-        <h4>{job.position}</h4>
-        <p>{job.company}</p>
-        <p>{job.location}</p>
+        <h4 className="font-bold text-primary-very-dark-blue text-xl">
+          {job.position}
+        </h4>
+        <p className="text-secondary-dark-grey text-base">{job.company}</p>
+        <p className="text-sm text-primary-violet">{job.location}</p>
       </div>
     </div>
   );

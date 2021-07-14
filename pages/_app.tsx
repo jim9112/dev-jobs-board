@@ -4,7 +4,7 @@ import MasterHeader from '../components/MasterHeader';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-secondary-light-grey min-h-screen font-main">
       <MasterHeader />
       <Component {...pageProps} />
     </div>
