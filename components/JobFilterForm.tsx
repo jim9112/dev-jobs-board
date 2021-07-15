@@ -4,21 +4,33 @@ import locationIcon from '../public/assets/desktop/icon-location.svg';
 
 const JobFilterForm = () => {
   return (
-    <>
-      <form className="w-full h-20 bg-secondary-white grid grid-cols-3 items-center">
-        <div>
+    <div className="relative">
+      <form className="w-full h-20 bg-secondary-white grid grid-cols-3 items-center rounded-md relative left-0 -top-7 divide-x-2 divide-secondary-light-grey">
+        <div className="h-full flex items-center px-8">
           <label htmlFor="data">
             <Image src={searchIcon} alt="search icon" />{' '}
           </label>
-          <input type="text" name="data" id="data" />
+          <input
+            className="w-full"
+            type="text"
+            name="data"
+            id="data"
+            placeholder="Filter by title, companies, expertise…"
+          />
         </div>
-        <div>
+        <div className="h-full flex items-center px-8">
           <label htmlFor="location">
             <Image src={locationIcon} alt="location icon" />{' '}
           </label>
-          <input type="text" name="location" id="location" />
+          <input
+            className="w-full"
+            type="text"
+            name="location"
+            id="location"
+            placeholder="Filter by location…"
+          />
         </div>
-        <div>
+        <div className="h-full flex items-center">
           <input type="checkbox" name="fullTime" id="fullTime"></input>
           <label htmlFor="fulltime">Full Time Only</label>{' '}
           <button
@@ -32,7 +44,7 @@ const JobFilterForm = () => {
           </button>
         </div>
       </form>
-    </>
+    </div>
   );
 };
 
