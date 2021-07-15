@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useRef } from 'react';
+import React, { useRef } from 'react';
 import Image from 'next/image';
 import sunIcon from '../public/assets/desktop/icon-sun.svg';
 import moonIcon from '../public/assets/desktop/icon-moon.svg';

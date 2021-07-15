@@ -21,7 +21,7 @@ const JobsContainer = ({ jobs }: CompProps) => {
 
   return (
     <div>
-      <div className="px-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7 ">
         {jobs.length > 0 &&
           jobs.map(
             (job: JobType, index: number) =>

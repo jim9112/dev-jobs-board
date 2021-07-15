@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import JobsContainer from '../components/JobsContainer';
+import JobFilterForm from '../components/JobFilterForm';
 import jobData from '../lib/data.json';
 
 export default function Home() {
@@ -11,8 +12,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1>Dev Jobs Board</h1>
+      <main className="lg:px-40">
+        <JobFilterForm />
         <JobsContainer jobs={jobData} />
       </main>
 
