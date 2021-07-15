@@ -30,7 +30,7 @@ const JobFilterForm = () => {
             placeholder="Filter by location…"
           />
         </div>
-        <div className="h-full flex items-center">
+        <div className="h-full flex items-center px-8">
           <input type="checkbox" name="fullTime" id="fullTime"></input>
           <label htmlFor="fulltime">Full Time Only</label>{' '}
           <button
