@@ -15,7 +15,11 @@ module.exports = {
     fontFamily: {
       main: ['Kumbh Sans', 'sans-serif'],
     },
-    extend: {},
+    extend: {
+      backgroundImage: (theme) => ({
+        'header-desktop': "url('/assets/desktop/bg-pattern-header.svg')",
+      }),
+    },
   },
   variants: {
     extend: {},
