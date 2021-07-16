@@ -40,7 +40,7 @@ const SingleJobPage = () => {
         logoBackground={job?.logoBackground}
         company={job?.company}
       />
-      <section className="bg-secondary-white rounded-md">
+      <section className="bg-secondary-white rounded-md lg:p-12">
         <JobDescription
           contract={job?.contract}
           description={job?.description}
