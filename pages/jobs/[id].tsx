@@ -2,21 +2,27 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import jobList from '../../lib/data.json';
+import SingleJobPageBanner from '../../components/SingleJobPageBanner';
 
 type Job =
   | {
       logo: string;
       logoBackground: string;
-      name: string;
       company: string;
       postedAt: string;
       contract: string;
       position: string;
       location: string;
       description: string;
+      website: string;
+      apply: string;
       requirements: {
         content: string;
-        items: [item: string];
+        items: string[];
+      };
+      role: {
+        content: string;
+        items: string[];
       };
     }
   | undefined;
@@ -29,34 +35,11 @@ const SingleJobPage = () => {
 
   return (
     <div className="lg:px-80 relative">
-      <section className="flex bg-secondary-white rounded-md relative -top-14">
-        <div
-          className="w-36 h-36 p-8"
-          style={{ backgroundColor: job?.logoBackground }}>
-          <div className="relative w-full h-full">
-            {job?.logo && (
-              <Image
-                layout="fill"
-                src={job?.logo}
-                alt={job.name}
-                objectFit="inherit"
-              />
-            )}
-          </div>
-        </div>
-        <div>
-          <p>{job?.company}</p>
-        </div>
-        <button
-          type="button"
-          className="bg-secondary-light-grey hover:bg-primary-light-violet text-primary-violet w-28 h-12 font-main font-bold rounded-md cursor-pointer"
-          onClick={(e) => {
-            e.preventDefault();
-            console.log('submit');
-          }}>
-          Search
-        </button>
-      </section>
+      <SingleJobPageBanner
+        logo={job?.logo}
+        logoBackground={job?.logoBackground}
+        company={job?.company}
+      />
       <section className="bg-secondary-white rounded-md">
         <div>
           <div>
@@ -88,7 +71,20 @@ const SingleJobPage = () => {
             ))}
           </ul>
         </div>
+        <div>
+          <h1>What you will do</h1>
+          <p>{job?.role.content}</p>
+          <ol className="list-decimal list-inside">
+            {job?.role.items.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ol>
+        </div>
       </section>
+      <footer>
+        {' '}
+        <h1>footer</h1>
+      </footer>
     </div>
   );
 };

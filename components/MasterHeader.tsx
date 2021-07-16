@@ -3,6 +3,7 @@ import Image from 'next/image';
 import sunIcon from '../public/assets/desktop/icon-sun.svg';
 import moonIcon from '../public/assets/desktop/icon-moon.svg';
 import logo from '../public/assets/desktop/logo.svg';
+import Link from 'next/link';
 
 type CompProps = {
   outerDiv: any;
@@ -24,9 +25,16 @@ const MasterHeader = ({ outerDiv }: CompProps) => {
   return (
     <header className="bg-header-desktop bg-cover bg-no-repeat h-40 lg:px-40 lg:py-11">
       <div className="grid grid-flow-col items-center">
-        <div>
-          <Image src={logo} alt="logo" objectFit="cover" />
-        </div>
+        <Link href="/" passHref>
+          <div>
+            <Image
+              className="cursor-pointer"
+              src={logo}
+              alt="logo"
+              objectFit="cover"
+            />
+          </div>
+        </Link>
         <div className="flex items-center justify-self-end">
           <Image src={sunIcon} alt="sun icon" />
 
