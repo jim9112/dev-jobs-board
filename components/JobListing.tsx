@@ -1,3 +1,4 @@
+import router, { useRouter } from 'next/router';
 import Image from 'next/image';
 
 type CompProps = {
@@ -9,12 +10,13 @@ type CompProps = {
     contract: string;
     logo: string;
     logoBackground: string;
+    id: number;
   };
 };
 
 const JobListing = ({ job }: CompProps) => {
   return (
-    <div className="pt-6">
+    <div className="pt-6" onClick={() => router.push(`/jobs/${job.id}`)}>
       <div className="bg-secondary-white relative p-8 rounded-md">
         <div
           style={{ backgroundColor: job.logoBackground }}
