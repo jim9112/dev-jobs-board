@@ -34,7 +34,7 @@ const SingleJobPage = () => {
   const job: Job = jobList.find((el) => el.id === jobId);
 
   return (
-    <div className="lg:px-80 relative">
+    <div className="lg:px-52 xl:px-80 relative">
       <SingleJobPageBanner
         logo={job?.logo}
         logoBackground={job?.logoBackground}
