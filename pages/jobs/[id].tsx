@@ -4,6 +4,7 @@ import SingleJobPageBanner from '../../components/SingleJobPageBanner';
 import JobDescription from '../../components/JobDescription';
 import JobRequirements from '../../components/JobRequirements';
 import JobRole from '../../components/JobRole';
+import SingleJobFooter from '../../components/SingleJobFooter';
 
 type Job =
   | {
@@ -34,27 +35,26 @@ const SingleJobPage = () => {
   const job: Job = jobList.find((el) => el.id === jobId);
 
   return (
-    <div className="lg:px-52 xl:px-80 relative">
-      <SingleJobPageBanner
-        logo={job?.logo}
-        logoBackground={job?.logoBackground}
-        company={job?.company}
-      />
-      <section className="bg-secondary-white rounded-md lg:p-12">
-        <JobDescription
-          contract={job?.contract}
-          description={job?.description}
-          position={job?.position}
-          postedAt={job?.postedAt}
-          location={job?.location}
+    <div className="relative">
+      <div className="lg:px-52 xl:px-80 relative mb-20">
+        <SingleJobPageBanner
+          logo={job?.logo}
+          logoBackground={job?.logoBackground}
+          company={job?.company}
         />
-        <JobRequirements requirements={job?.requirements} />
-        <JobRole role={job?.role} />
-      </section>
-      <footer>
-        {' '}
-        <h1>footer</h1>
-      </footer>
+        <section className="bg-secondary-white rounded-md lg:p-12">
+          <JobDescription
+            contract={job?.contract}
+            description={job?.description}
+            position={job?.position}
+            postedAt={job?.postedAt}
+            location={job?.location}
+          />
+          <JobRequirements requirements={job?.requirements} />
+          <JobRole role={job?.role} />
+        </section>
+      </div>
+      <SingleJobFooter position={job?.position} company={job?.company} />
     </div>
   );
 };
