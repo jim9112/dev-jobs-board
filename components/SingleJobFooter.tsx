@@ -5,9 +5,9 @@ type CompProps = {
 
 const SingleJobFooter = ({ position, company }: CompProps) => {
   return (
-    <footer className="relative bottom-0 w-full bg-secondary-white h-24 grid grid-flow-col items-center lg:px-52 xl:px-80 rounded-md">
+    <footer className="relative bottom-0 w-full bg-secondary-white dark:bg-primary-very-dark-blue h-24 grid grid-flow-col items-center lg:px-52 xl:px-80 rounded-md">
       <div>
-        <h1 className="font-bold text-xl text-primary-very-dark-blue">
+        <h1 className="font-bold text-xl text-primary-very-dark-blue dark:text-secondary-white">
           {position}
         </h1>
         <p className="text-secondary-dark-grey text-base">{company}</p>

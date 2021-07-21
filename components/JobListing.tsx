@@ -16,8 +16,10 @@ type CompProps = {
 
 const JobListing = ({ job }: CompProps) => {
   return (
-    <div className="pt-6" onClick={() => router.push(`/jobs/${job.id}`)}>
-      <div className="bg-secondary-white relative p-8 rounded-md">
+    <div
+      className="pt-6 cursor-pointer"
+      onClick={() => router.push(`/jobs/${job.id}`)}>
+      <div className="bg-secondary-white dark:bg-primary-very-dark-blue relative p-8 rounded-md">
         <div
           style={{ backgroundColor: job.logoBackground }}
           className="w-12 h-12 rounded-2xl absolute -top-6">
@@ -33,10 +35,10 @@ const JobListing = ({ job }: CompProps) => {
         <p className="text-secondary-dark-grey text-base">
           {job.postedAt} {`• ${job.contract}`}
         </p>
-        <h4 className="font-bold text-primary-very-dark-blue text-xl">
+        <h4 className="font-bold text-primary-very-dark-blue dark:text-secondary-white text-xl">
           {job.position}
         </h4>
-        <p className="text-secondary-dark-grey text-base">{job.company}</p>
+        <p className="text-secondary-dark-grey text-base mb-9">{job.company}</p>
         <p className="text-sm text-primary-violet">{job.location}</p>
       </div>
     </div>

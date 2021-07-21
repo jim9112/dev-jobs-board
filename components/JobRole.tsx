@@ -10,7 +10,7 @@ type CompProps = {
 const JobRole = ({ role }: CompProps) => {
   return (
     <div className="mb-12">
-      <h1 className="font-bold text-xl text-primary-very-dark-blue mb-5">
+      <h1 className="font-bold text-xl text-primary-very-dark-blue dark:text-secondary-white mb-5">
         What you will do
       </h1>
       <p className="text-base text-secondary-dark-grey mb-10">
