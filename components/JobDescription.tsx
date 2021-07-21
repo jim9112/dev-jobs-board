@@ -27,7 +27,7 @@ const JobDescription = ({
         </div>
         <button
           type="button"
-          className="bg-primary-violet hover:bg-primary-light-violet text-secondary-white w-28 h-12 font-main font-bold rounded-md cursor-pointer justify-self-end"
+          className="bg-primary-violet hover:bg-primary-light-violet text-secondary-white px-8 h-12 font-main font-bold rounded-md cursor-pointer justify-self-end"
           onClick={(e) => {
             e.preventDefault();
             console.log('submit');

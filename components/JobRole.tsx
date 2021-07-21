@@ -9,12 +9,21 @@ type CompProps = {
 
 const JobRole = ({ role }: CompProps) => {
   return (
-    <div>
-      <h1>What you will do</h1>
-      <p>{role?.content}</p>
-      <ol className="list-decimal list-inside">
+    <div className="mb-12">
+      <h1 className="font-bold text-xl text-primary-very-dark-blue mb-5">
+        What you will do
+      </h1>
+      <p className="text-base text-secondary-dark-grey mb-10">
+        {role?.content}
+      </p>
+      <ol className="list-inside text-base text-secondary-dark-grey">
         {role?.items.map((item, i) => (
-          <li key={i}>{item}</li>
+          <li className="flex" key={i}>
+            <span className="w-3 inline-block text-primary-violet text-base mr-8">
+              {i + 1}
+            </span>{' '}
+            <span className="inline-block">{item}</span>
+          </li>
         ))}
       </ol>
     </div>

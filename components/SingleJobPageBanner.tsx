@@ -18,18 +18,22 @@ const SingleJobPageBanner = ({ logo, logoBackground, company }: CompProps) => {
           )}
         </div>
       </div>
-      <div>
-        <p>{company}</p>
+      <div className="grid grid-flow-col items-center w-full px-10">
+        <div>
+          <p className="text-2xl font-bold text-primary-very-dark-blue">
+            {company}
+          </p>
+        </div>
+        <button
+          type="button"
+          className="bg-secondary-light-grey hover:bg-primary-light-violet text-primary-violet px-8 h-12 font-main font-bold rounded-md cursor-pointer justify-self-end"
+          onClick={(e) => {
+            e.preventDefault();
+            console.log('submit');
+          }}>
+          Company Site
+        </button>
       </div>
-      <button
-        type="button"
-        className="bg-secondary-light-grey hover:bg-primary-light-violet text-primary-violet w-28 h-12 font-main font-bold rounded-md cursor-pointer"
-        onClick={(e) => {
-          e.preventDefault();
-          console.log('submit');
-        }}>
-        Search
-      </button>
     </section>
   );
 };
