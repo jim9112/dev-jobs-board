@@ -18,6 +18,7 @@ module.exports = {
     extend: {
       backgroundImage: (theme) => ({
         'header-desktop': "url('/assets/desktop/bg-pattern-header.svg')",
+        'header-tablet': "url('/assets/tablet/bg-pattern-header.svg')",
       }),
     },
   },

@@ -14,8 +14,8 @@ const JobDescription = ({
   location,
 }: CompProps) => {
   return (
-    <div className="lg:mb-16">
-      <div className="grid lg:grid-cols-2 mb-10 items-center">
+    <div className="lg:mb-16 md:mb-10">
+      <div className="grid md:grid-cols-2 mb-10 items-center">
         <div className="">
           <p className="text-base text-secondary-dark-grey">
             {postedAt} • {contract}

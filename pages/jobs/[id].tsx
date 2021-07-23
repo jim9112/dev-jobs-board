@@ -36,13 +36,13 @@ const SingleJobPage = () => {
 
   return (
     <div className="relative">
-      <div className="lg:px-52 xl:px-80 relative mb-20">
+      <div className="md:px-9 lg:px-52 xl:px-80 relative mb-20">
         <SingleJobPageBanner
           logo={job?.logo}
           logoBackground={job?.logoBackground}
           company={job?.company}
         />
-        <section className="bg-secondary-white dark:bg-primary-very-dark-blue rounded-md lg:p-12">
+        <section className="bg-secondary-white dark:bg-primary-very-dark-blue rounded-md p-12">
           <JobDescription
             contract={job?.contract}
             description={job?.description}
