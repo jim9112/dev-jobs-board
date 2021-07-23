@@ -6,7 +6,7 @@ const JobFilterForm = () => {
   return (
     <div className="relative">
       <form className="w-full h-20 bg-secondary-white dark:bg-primary-very-dark-blue grid grid-cols-3 items-center rounded-md relative left-0 -top-7 divide-x-2 divide-secondary-light-grey">
-        <div className="h-full flex items-center px-8">
+        <div className="h-full flex items-center md:px-4 lg:px-8">
           <label htmlFor="data">
             <Image src={searchIcon} alt="search icon" />{' '}
           </label>
@@ -30,14 +30,14 @@ const JobFilterForm = () => {
             placeholder="Filter by location…"
           />
         </div>
-        <div className="h-full grid grid-flow-col items-center px-8 ">
+        <div className="h-full grid grid-flow-col items-center md:px-4 lg:px-8 ">
           <input
             className="h-6 w-6 checked:bg-primary-violet dark:bg-primary-very-dark-blue"
             type="checkbox"
             name="fullTime"
             id="fullTime"></input>
           <label className="dark:text-secondary-white" htmlFor="fulltime">
-            Full Time Only
+            Full Time
           </label>{' '}
           <button
             type="submit"

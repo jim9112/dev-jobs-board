@@ -20,7 +20,7 @@ const JobDescription = ({
           <p className="text-base text-secondary-dark-grey">
             {postedAt} • {contract}
           </p>
-          <p className="font-bold text-lg text-primary-very-dark-blue dark:text-secondary-white">
+          <p className="font-bold text-2xl text-primary-very-dark-blue dark:text-secondary-white">
             {position}
           </p>
           <p className="text-primary-violet font-bold text-sm">{location}</p>

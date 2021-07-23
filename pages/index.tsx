@@ -12,12 +12,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="lg:px-40">
+      <main className="md:px-9 lg:px-40 xl:px-80">
         <JobFilterForm />
         <JobsContainer jobs={jobData} />
       </main>
-
-      <footer></footer>
     </div>
   );
 }
