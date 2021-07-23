@@ -49,7 +49,7 @@ const JobFilterForm = ({ setFormData }: CompProps) => {
             onChange={(e) => handleChange(e)}></input>
           <label
             className="dark:text-secondary-white text-base"
-            htmlFor="fulltime">
+            htmlFor="fulltimeOnly">
             Full Time
           </label>{' '}
           <button
