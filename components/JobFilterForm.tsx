@@ -1,8 +1,39 @@
 import Image from 'next/image';
 import searchIcon from '../public/assets/desktop/icon-search.svg';
 import locationIcon from '../public/assets/desktop/icon-location.svg';
+import { Dispatch, SetStateAction, useState } from 'react';
 
-const JobFilterForm = () => {
+type CompProps = {
+  formData: {};
+  setFormData: Dispatch<SetStateAction<{}>>;
+};
+
+const JobFilterForm = ({ formData, setFormData }: CompProps) => {
+  // move to custom hook
+  const [inputData, setInputData] = useState<{}>({
+    data: '',
+    location: '',
+    fullTimeOnly: false,
+  });
+
+  // save input changes to state
+  const handleChange = (e: React.FormEvent) => {
+    const target = e.currentTarget as HTMLInputElement;
+    if (target.type === 'checkbox') {
+      setInputData({
+        ...inputData,
+        [target.id]: target.checked,
+      });
+    } else if (target.type === 'text') {
+      setInputData({
+        ...inputData,
+        [target.id]: target.value.toLowerCase(),
+      });
+    }
+  };
+
+  // handle form submit
+
   return (
     <div className="relative">
       <form className="w-full h-20 bg-secondary-white dark:bg-primary-very-dark-blue grid grid-cols-3 items-center rounded-md relative left-0 -top-7 divide-x-2 divide-secondary-light-grey">
@@ -16,6 +47,7 @@ const JobFilterForm = () => {
             name="data"
             id="data"
             placeholder="Filter by title, companies, expertise…"
+            onChange={(e) => handleChange(e)}
           />
         </div>
         <div className="h-full flex items-center px-8">
@@ -28,6 +60,7 @@ const JobFilterForm = () => {
             name="location"
             id="location"
             placeholder="Filter by location…"
+            onChange={(e) => handleChange(e)}
           />
         </div>
         <div className="h-full grid grid-flow-col items-center md:px-4 lg:px-8 ">
@@ -35,16 +68,19 @@ const JobFilterForm = () => {
             className="h-6 w-6 checked:bg-primary-violet dark:bg-primary-very-dark-blue"
             type="checkbox"
             name="fullTime"
-            id="fullTime"></input>
-          <label className="dark:text-secondary-white" htmlFor="fulltime">
+            id="fullTimeOnly"
+            onChange={(e) => handleChange(e)}></input>
+          <label
+            className="dark:text-secondary-white text-base"
+            htmlFor="fulltime">
             Full Time
           </label>{' '}
           <button
             type="submit"
-            className="bg-primary-violet hover:bg-primary-light-violet text-secondary-white w-28 h-12 font-main font-bold rounded-md cursor-pointer justify-self-end"
+            className="bg-primary-violet hover:bg-primary-light-violet text-secondary-white md:w-20 md:h-12 lg:w-28 lg:h-12 font-main font-bold rounded-md cursor-pointer justify-self-end"
             onClick={(e) => {
               e.preventDefault();
-              console.log('submit');
+              setFormData({ ...inputData });
             }}>
             Search
           </button>

@@ -2,8 +2,14 @@ import Head from 'next/head';
 import JobsContainer from '../components/JobsContainer';
 import JobFilterForm from '../components/JobFilterForm';
 import jobData from '../lib/data.json';
+import { useState } from 'react';
 
 export default function Home() {
+  const [formData, setFormData] = useState<{}>({
+    general: '',
+    location: '',
+    fullTimeOnly: false,
+  });
   return (
     <div>
       <Head>
@@ -13,7 +19,7 @@ export default function Home() {
       </Head>
 
       <main className="md:px-9 lg:px-40 xl:px-80">
-        <JobFilterForm />
+        <JobFilterForm formData={formData} setFormData={setFormData} />
         <JobsContainer jobs={jobData} />
       </main>
     </div>
