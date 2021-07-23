@@ -1,38 +1,15 @@
 import Image from 'next/image';
 import searchIcon from '../public/assets/desktop/icon-search.svg';
 import locationIcon from '../public/assets/desktop/icon-location.svg';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction } from 'react';
+import useFormInputChange from '../hooks/useFormInputChange';
 
 type CompProps = {
-  formData: {};
   setFormData: Dispatch<SetStateAction<{}>>;
 };
 
-const JobFilterForm = ({ formData, setFormData }: CompProps) => {
-  // move to custom hook
-  const [inputData, setInputData] = useState<{}>({
-    data: '',
-    location: '',
-    fullTimeOnly: false,
-  });
-
-  // save input changes to state
-  const handleChange = (e: React.FormEvent) => {
-    const target = e.currentTarget as HTMLInputElement;
-    if (target.type === 'checkbox') {
-      setInputData({
-        ...inputData,
-        [target.id]: target.checked,
-      });
-    } else if (target.type === 'text') {
-      setInputData({
-        ...inputData,
-        [target.id]: target.value.toLowerCase(),
-      });
-    }
-  };
-
-  // handle form submit
+const JobFilterForm = ({ setFormData }: CompProps) => {
+  const { inputData, handleChange } = useFormInputChange();
 
   return (
     <div className="relative">

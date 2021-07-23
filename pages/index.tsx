@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 export default function Home() {
   const [formData, setFormData] = useState<{}>({
-    general: '',
+    data: '',
     location: '',
     fullTimeOnly: false,
   });
@@ -19,7 +19,7 @@ export default function Home() {
       </Head>
 
       <main className="md:px-9 lg:px-40 xl:px-80">
-        <JobFilterForm formData={formData} setFormData={setFormData} />
+        <JobFilterForm setFormData={setFormData} />
         <JobsContainer jobs={jobData} />
       </main>
     </div>
