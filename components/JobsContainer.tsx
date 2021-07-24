@@ -3,9 +3,10 @@ import JobListing from '../components/JobListing';
 
 type CompProps = {
   jobs: any;
+  formData: {};
 };
 
-const JobsContainer = ({ jobs }: CompProps) => {
+const JobsContainer = ({ jobs, formData }: CompProps) => {
   const [totalJobs, setTotalJobs] = useState(12);
 
   type JobType = {
@@ -20,8 +21,10 @@ const JobsContainer = ({ jobs }: CompProps) => {
   };
 
   return (
-    <div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:gap-3 lg:gap-7">
+    <div className="pb-14">
+      <div
+        style={{ gridAutoRows: '1fr' }}
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-3 lg:gap-7 mb-8">
         {jobs.length > 0 &&
           jobs.map(
             (job: JobType, index: number) =>

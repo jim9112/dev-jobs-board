@@ -18,9 +18,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="md:px-9 lg:px-40 xl:px-80">
+      <main className="px-6 md:px-9 lg:px-40 xl:px-80">
         <JobFilterForm setFormData={setFormData} />
-        <JobsContainer jobs={jobData} />
+        <JobsContainer jobs={jobData} formData={formData} />
       </main>
     </div>
   );

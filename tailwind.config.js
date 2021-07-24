@@ -23,7 +23,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: { backgroundColor: ['checked'] },
+    extend: {
+      backgroundColor: ['checked'],
+    },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 };

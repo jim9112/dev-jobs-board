@@ -19,7 +19,7 @@ const JobListing = ({ job }: CompProps) => {
     <div
       className="pt-6 cursor-pointer"
       onClick={() => router.push(`/jobs/${job.id}`)}>
-      <div className="bg-secondary-white dark:bg-primary-very-dark-blue relative p-8 rounded-md">
+      <div className="h-full bg-secondary-white dark:bg-primary-very-dark-blue relative p-8 rounded-md">
         <div
           style={{ backgroundColor: job.logoBackground }}
           className="w-12 h-12 rounded-2xl absolute -top-6">
