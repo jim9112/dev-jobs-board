@@ -31,13 +31,27 @@ const JobsContainer = ({ jobs, formData }: CompProps) => {
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-3 lg:gap-7 mb-8">
         {jobs.length > 0 &&
           jobs.map((job: JobType, index: number) => {
+            // filter based on two text input fields
             if (
               (job.location.toLowerCase().includes(formData.location) &&
                 job.company.toLowerCase().includes(formData.data)) ||
               (job.location.toLowerCase().includes(formData.location) &&
                 job.position.toLowerCase().includes(formData.data))
             ) {
-              return index < totalJobs && <JobListing key={job.id} job={job} />;
+              // check if full time only is selected
+              if (formData.fullTimeOnly) {
+                if (job.contract === 'Full Time') {
+                  // return only full time jobs
+                  return (
+                    index < totalJobs && <JobListing key={job.id} job={job} />
+                  );
+                }
+              } else {
+                // return all jobs
+                return (
+                  index < totalJobs && <JobListing key={job.id} job={job} />
+                );
+              }
             }
           })}
       </div>
