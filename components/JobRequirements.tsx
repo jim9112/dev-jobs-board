@@ -8,7 +8,7 @@ type CompProps = {
 };
 const JobRequirements = ({ requirements }: CompProps) => {
   return (
-    <div className="mb-12">
+    <div className="mb-36 md:mb-12">
       <h1 className="font-bold text-xl text-primary-very-dark-blue mb-5 dark:text-secondary-white">
         Requirements
       </h1>

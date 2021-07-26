@@ -14,9 +14,9 @@ const JobDescription = ({
   location,
 }: CompProps) => {
   return (
-    <div className="lg:mb-16 md:mb-10">
+    <div className="mb-36 lg:mb-16 md:mb-10">
       <div className="grid md:grid-cols-2 mb-10 items-center">
-        <div className="">
+        <div className="mb-12 md:mb-0">
           <p className="text-base text-secondary-dark-grey">
             {postedAt} • {contract}
           </p>
@@ -27,7 +27,7 @@ const JobDescription = ({
         </div>
         <button
           type="button"
-          className="bg-primary-violet hover:bg-primary-light-violet text-secondary-white px-8 h-12 font-main font-bold rounded-md cursor-pointer justify-self-end"
+          className="w-full md:w-auto bg-primary-violet hover:bg-primary-light-violet text-secondary-white px-8 h-12 font-main font-bold rounded-md cursor-pointer justify-self-end"
           onClick={(e) => {
             e.preventDefault();
             console.log('submit');
