@@ -3,7 +3,11 @@ import JobListing from '../components/JobListing';
 
 type CompProps = {
   jobs: any;
-  formData: {};
+  formData: {
+    location: string;
+    data: string;
+    fullTimeOnly: boolean;
+  };
 };
 
 const JobsContainer = ({ jobs, formData }: CompProps) => {
@@ -26,10 +30,16 @@ const JobsContainer = ({ jobs, formData }: CompProps) => {
         style={{ gridAutoRows: '1fr' }}
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-3 lg:gap-7 mb-8">
         {jobs.length > 0 &&
-          jobs.map(
-            (job: JobType, index: number) =>
-              index < totalJobs && <JobListing key={job.id} job={job} />
-          )}
+          jobs.map((job: JobType, index: number) => {
+            if (
+              (job.location.toLowerCase().includes(formData.location) &&
+                job.company.toLowerCase().includes(formData.data)) ||
+              (job.location.toLowerCase().includes(formData.location) &&
+                job.position.toLowerCase().includes(formData.data))
+            ) {
+              return index < totalJobs && <JobListing key={job.id} job={job} />;
+            }
+          })}
       </div>
       <div className="w-full grid justify-center">
         <button

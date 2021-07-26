@@ -20,7 +20,7 @@ const JobFilterForm = ({ setFormData }: CompProps) => {
             <Image src={searchIcon} alt="search icon" />{' '}
           </label>
           <input
-            className="w-full dark:bg-primary-very-dark-blue border-0"
+            className="w-full dark:bg-primary-very-dark-blue border-0 focus:ring-0"
             type="text"
             name="data"
             id="data"
@@ -33,7 +33,7 @@ const JobFilterForm = ({ setFormData }: CompProps) => {
             <Image src={locationIcon} alt="location icon" />{' '}
           </label>
           <input
-            className="w-full dark:bg-primary-very-dark-blue border-0"
+            className="w-full dark:bg-primary-very-dark-blue border-0 focus:ring-0"
             type="text"
             name="location"
             id="location"

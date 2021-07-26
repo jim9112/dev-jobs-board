@@ -5,7 +5,11 @@ import jobData from '../lib/data.json';
 import { useState } from 'react';
 
 export default function Home() {
-  const [formData, setFormData] = useState<{}>({
+  const [formData, setFormData] = useState<{
+    data: string;
+    location: string;
+    fullTimeOnly: boolean;
+  }>({
     data: '',
     location: '',
     fullTimeOnly: false,
