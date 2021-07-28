@@ -7,10 +7,11 @@ import { Dispatch, SetStateAction } from 'react';
 import useFormInputChange from '../hooks/useFormInputChange';
 
 type CompProps = {
-  setFormData: Dispatch<SetStateAction<{}>>;
+  setFormData: any;
+  toggleModal: () => void;
 };
 
-const JobFilterForm = ({ setFormData }: CompProps) => {
+const JobFilterForm = ({ setFormData, toggleModal }: CompProps) => {
   const { inputData, handleChange } = useFormInputChange();
 
   return (
@@ -42,7 +43,9 @@ const JobFilterForm = ({ setFormData }: CompProps) => {
             onChange={(e) => handleChange(e)}
           />
         </div>
-        <div className="md:hidden mr-2 cursor-pointer">
+        <div
+          className="md:hidden mr-2 cursor-pointer"
+          onClick={() => toggleModal()}>
           <Image src={filterIcon} alt="filter icon" />
         </div>
         <div className="h-full grid grid-flow-col items-center md:px-4 lg:px-8 ">
