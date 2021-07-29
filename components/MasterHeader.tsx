@@ -23,7 +23,7 @@ const MasterHeader = ({ outerDiv }: CompProps) => {
   };
 
   return (
-    <header className="bg-header-desktop md:bg-header-tablet bg-cover bg-no-repeat h-40 px-6 py-8 md:px-10 lg:px-40 md:py-10 lg:py-11">
+    <header className="bg-header-mobile lg:bg-header-desktop md:bg-header-tablet bg-cover bg-no-repeat h-40 px-6 py-8 md:px-10 lg:px-40 md:py-10 lg:py-11">
       <div className="grid grid-flow-col items-center">
         <Link href="/" passHref>
           <div>

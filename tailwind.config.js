@@ -19,6 +19,7 @@ module.exports = {
       backgroundImage: (theme) => ({
         'header-desktop': "url('/assets/desktop/bg-pattern-header.svg')",
         'header-tablet': "url('/assets/tablet/bg-pattern-header.svg')",
+        'header-mobile': "url('/assets/mobile/bg-pattern-header.svg')",
       }),
     },
   },

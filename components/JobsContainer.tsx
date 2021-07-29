@@ -56,11 +56,13 @@ const JobsContainer = ({ jobs, formData }: CompProps) => {
           })}
       </div>
       <div className="w-full grid justify-center">
-        <button
-          className="bg-primary-violet hover:bg-primary-light-violet text-secondary-white w-36 h-12 font-main font-bold rounded-md cursor-pointer"
-          onClick={() => setTotalJobs(totalJobs + 12)}>
-          Load More
-        </button>
+        {totalJobs < jobs.length && (
+          <button
+            className="bg-primary-violet hover:bg-primary-light-violet text-secondary-white w-36 h-12 font-main font-bold rounded-md cursor-pointer"
+            onClick={() => setTotalJobs(totalJobs + 12)}>
+            Load More
+          </button>
+        )}
       </div>
     </div>
   );
