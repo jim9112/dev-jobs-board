@@ -23,7 +23,11 @@ export default function Home() {
   return (
     <div className="relative">
       {modalOpen && (
-        <MobileFormModal toggleModal={toggleModal} setFormData={setFormData} />
+        <MobileFormModal
+          toggleModal={toggleModal}
+          setFormData={setFormData}
+          formData={formData}
+        />
       )}
       <Head>
         <title>Dev Jobs Board</title>
