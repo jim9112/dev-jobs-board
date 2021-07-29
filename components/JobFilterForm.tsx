@@ -50,7 +50,7 @@ const JobFilterForm = ({ setFormData, toggleModal }: CompProps) => {
         </div>
         <div className="h-full grid grid-flow-col items-center md:px-4 lg:px-8 ">
           <input
-            className="hidden md:inline h-6 w-6 dark:bg-primary-very-dark-blue text-primary-violet focus:ring-0 bg-secondary-grey border-0 rounded-sm"
+            className="hidden md:inline h-6 w-6text-primary-violet focus:ring-0 bg-secondary-grey border-0 rounded-sm"
             type="checkbox"
             name="fullTime"
             id="fullTimeOnly"

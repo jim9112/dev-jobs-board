@@ -20,7 +20,7 @@ const MobileFormModal = ({ toggleModal, setFormData, formData }: CompProps) => {
           toggleModal();
         }
       }}>
-      <div className="bg-secondary-white w-full py-6 rounded-md">
+      <div className="bg-secondary-white dark:bg-primary-very-dark-blue w-full py-6 rounded-md">
         <div className=" h-full flex items-center px-6">
           <label htmlFor="location">
             <Image src={locationIcon} alt="location icon" />{' '}
@@ -37,7 +37,7 @@ const MobileFormModal = ({ toggleModal, setFormData, formData }: CompProps) => {
         <div className="h-full grid grid-flow-row px-6 pt-6 gap-6 ">
           <div className="">
             <input
-              className="h-6 w-6 mr-4 dark:bg-primary-very-dark-blue text-primary-violet focus:ring-0 bg-secondary-grey border-0 rounded-sm"
+              className="h-6 w-6 mr-4 text-primary-violet focus:ring-0 bg-secondary-grey border-0 rounded-sm"
               type="checkbox"
               name="fullTime"
               id="fullTimeOnly"
