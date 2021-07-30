@@ -1,11 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-const useFormInputChange = () => {
-  const [inputData, setInputData] = useState<{}>({
-    data: '',
-    location: '',
-    fullTimeOnly: false,
+const useFormInputChange = (formData: any) => {
+  const [inputData, setInputData] = useState<{
+    data: string;
+    location: string;
+    fullTimeOnly: boolean;
+  }>({
+    ...formData,
   });
+
+  useEffect(() => {
+    setInputData(formData);
+  }, [formData]);
 
   // save input changes to state
   const handleChange = (e: React.FormEvent) => {

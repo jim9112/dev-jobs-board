@@ -9,7 +9,7 @@ type CompProps = {
 };
 
 const MobileFormModal = ({ toggleModal, setFormData, formData }: CompProps) => {
-  const { inputData, handleChange } = useFormInputChange();
+  const { inputData, handleChange } = useFormInputChange(formData);
   return (
     <div
       id="modalOuter"
@@ -31,6 +31,7 @@ const MobileFormModal = ({ toggleModal, setFormData, formData }: CompProps) => {
             name="location"
             id="location"
             placeholder="Filter by location…"
+            value={inputData.location}
             onChange={(e) => handleChange(e)}
           />
         </div>
@@ -41,6 +42,7 @@ const MobileFormModal = ({ toggleModal, setFormData, formData }: CompProps) => {
               type="checkbox"
               name="fullTime"
               id="fullTimeOnly"
+              checked={inputData.fullTimeOnly}
               onChange={(e) => handleChange(e)}></input>
             <label
               className="dark:text-secondary-white text-base align-text-top"

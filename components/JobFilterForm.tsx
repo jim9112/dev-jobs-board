@@ -9,10 +9,11 @@ import useFormInputChange from '../hooks/useFormInputChange';
 type CompProps = {
   setFormData: any;
   toggleModal: () => void;
+  formData: {};
 };
 
-const JobFilterForm = ({ setFormData, toggleModal }: CompProps) => {
-  const { inputData, handleChange } = useFormInputChange();
+const JobFilterForm = ({ setFormData, toggleModal, formData }: CompProps) => {
+  const { inputData, handleChange } = useFormInputChange(formData);
 
   return (
     <div className="relative">
@@ -26,6 +27,7 @@ const JobFilterForm = ({ setFormData, toggleModal }: CompProps) => {
             type="text"
             name="data"
             id="data"
+            value={inputData.data}
             placeholder="Filter by title, companies, expertise…"
             onChange={(e) => handleChange(e)}
           />
@@ -39,6 +41,7 @@ const JobFilterForm = ({ setFormData, toggleModal }: CompProps) => {
             type="text"
             name="location"
             id="location"
+            value={inputData.location}
             placeholder="Filter by location…"
             onChange={(e) => handleChange(e)}
           />
@@ -54,6 +57,7 @@ const JobFilterForm = ({ setFormData, toggleModal }: CompProps) => {
             type="checkbox"
             name="fullTime"
             id="fullTimeOnly"
+            checked={inputData.fullTimeOnly}
             onChange={(e) => handleChange(e)}></input>
           <label
             className="hidden md:inline dark:text-secondary-white text-base"

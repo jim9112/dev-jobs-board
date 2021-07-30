@@ -36,7 +36,11 @@ export default function Home() {
       </Head>
 
       <main className="px-6 md:px-9 lg:px-20 xl:px-40 2xl:px-80">
-        <JobFilterForm setFormData={setFormData} toggleModal={toggleModal} />
+        <JobFilterForm
+          setFormData={setFormData}
+          toggleModal={toggleModal}
+          formData={formData}
+        />
         <JobsContainer jobs={jobData} formData={formData} />
       </main>
     </div>
