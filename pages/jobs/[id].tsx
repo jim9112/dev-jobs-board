@@ -36,7 +36,7 @@ const SingleJobPage = () => {
 
   return (
     <div className="relative">
-      <div className="px-6 md:px-9 lg:px-52 xl:px-80 relative mb-20">
+      <div className="px-6 md:px-9 lg:px-20 xl:px-40 2xl:px-80 relative mb-20">
         <SingleJobPageBanner
           logo={job?.logo}
           logoBackground={job?.logoBackground}
