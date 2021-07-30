@@ -5,7 +5,7 @@ import locationIcon from '../public/assets/desktop/icon-location.svg';
 type CompProps = {
   toggleModal: () => void;
   setFormData: any;
-  formData: {};
+  formData: { data: string; location: string; fullTimeOnly: boolean };
 };
 
 const MobileFormModal = ({ toggleModal, setFormData, formData }: CompProps) => {
@@ -21,7 +21,7 @@ const MobileFormModal = ({ toggleModal, setFormData, formData }: CompProps) => {
         }
       }}>
       <div className="bg-secondary-white dark:bg-primary-very-dark-blue w-full py-6 rounded-md">
-        <div className=" h-full flex items-center px-6">
+        <div className=" h-full flex items-center px-6 border-b border-secondary-grey">
           <label htmlFor="location">
             <Image src={locationIcon} alt="location icon" />{' '}
           </label>
