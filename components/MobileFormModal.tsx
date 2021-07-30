@@ -5,7 +5,7 @@ import locationIcon from '../public/assets/desktop/icon-location.svg';
 type CompProps = {
   toggleModal: () => void;
   setFormData: any;
-  formData: any;
+  formData: {};
 };
 
 const MobileFormModal = ({ toggleModal, setFormData, formData }: CompProps) => {

@@ -5,12 +5,14 @@ import jobData from '../lib/data.json';
 import { useState } from 'react';
 import MobileFormModal from '../components/MobileFormModal';
 
+type FormTypes = {
+  data: string;
+  location: string;
+  fullTimeOnly: boolean;
+};
+
 export default function Home() {
-  const [formData, setFormData] = useState<{
-    data: string;
-    location: string;
-    fullTimeOnly: boolean;
-  }>({
+  const [formData, setFormData] = useState<FormTypes>({
     data: '',
     location: '',
     fullTimeOnly: false,
@@ -18,7 +20,6 @@ export default function Home() {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const toggleModal = () => {
     modalOpen ? setModalOpen(false) : setModalOpen(true);
-    console.log(modalOpen);
   };
   return (
     <div className="relative">

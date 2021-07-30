@@ -3,13 +3,16 @@ import searchIcon from '../public/assets/desktop/icon-search.svg';
 import searchIconWhite from '../public/assets/desktop/icon-search-white.svg';
 import filterIcon from '../public/assets/mobile/icon-filter.svg';
 import locationIcon from '../public/assets/desktop/icon-location.svg';
-import { Dispatch, SetStateAction } from 'react';
 import useFormInputChange from '../hooks/useFormInputChange';
 
 type CompProps = {
   setFormData: any;
   toggleModal: () => void;
-  formData: {};
+  formData: {
+    data: string;
+    location: string;
+    fullTimeOnly: boolean;
+  };
 };
 
 const JobFilterForm = ({ setFormData, toggleModal, formData }: CompProps) => {
