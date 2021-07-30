@@ -16,8 +16,8 @@ const JobFilterForm = ({ setFormData, toggleModal }: CompProps) => {
 
   return (
     <div className="relative">
-      <form className="w-full h-20 p-4 md:p-0 bg-secondary-white dark:bg-primary-very-dark-blue flex md:grid md:grid-cols-3 items-center rounded-md relative left-0 -top-7 md:divide-x-2 divide-secondary-light-grey">
-        <div className="h-full flex items-center md:px-4 lg:px-8">
+      <form className="w-full h-20 p-4 md:p-0 bg-secondary-white dark:bg-primary-very-dark-blue flex justify-center md:grid md:grid-cols-3 items-center rounded-md relative left-0 -top-7 md:divide-x-2 divide-secondary-light-grey">
+        <div className="h-full w-full flex items-center md:px-4 lg:px-8">
           <label htmlFor="data">
             <Image src={searchIcon} alt="search icon" />{' '}
           </label>
