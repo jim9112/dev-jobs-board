@@ -35,7 +35,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="px-6 md:px-9 lg:px-40 xl:px-80">
+      <main className="px-6 md:px-9 lg:px-20 xl:px-40 2xl:px-80">
         <JobFilterForm setFormData={setFormData} toggleModal={toggleModal} />
         <JobsContainer jobs={jobData} formData={formData} />
       </main>
