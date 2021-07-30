@@ -4,6 +4,7 @@ import JobFilterForm from '../components/JobFilterForm';
 import jobData from '../lib/data.json';
 import { useState } from 'react';
 import MobileFormModal from '../components/MobileFormModal';
+import useToggleModal from '../hooks/useToggleModal';
 
 type FormTypes = {
   data: string;
@@ -17,10 +18,8 @@ export default function Home() {
     location: '',
     fullTimeOnly: false,
   });
-  const [modalOpen, setModalOpen] = useState<boolean>(false);
-  const toggleModal = () => {
-    modalOpen ? setModalOpen(false) : setModalOpen(true);
-  };
+  const { modalOpen, toggleModal } = useToggleModal();
+
   return (
     <div className="relative">
       {modalOpen && (
